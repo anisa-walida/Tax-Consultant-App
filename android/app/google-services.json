@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832492667580",
+    "project_id": "tax-consultant-479e0",
+    "storage_bucket": "tax-consultant-479e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832492667580:android:9b58bc0c4ccf6f6b9646b9",
+        "android_client_info": {
+          "package_name": "com.example.tax_consultant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_7rb_f9qzsTROyEaWsEZG9w1-UmKKXQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
