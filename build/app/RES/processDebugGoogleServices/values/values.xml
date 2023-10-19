@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">832492667580</string>
+    <string name="google_api_key" translatable="false">AIzaSyA_7rb_f9qzsTROyEaWsEZG9w1-UmKKXQU</string>
+    <string name="google_app_id" translatable="false">1:832492667580:android:9b58bc0c4ccf6f6b9646b9</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA_7rb_f9qzsTROyEaWsEZG9w1-UmKKXQU</string>
+    <string name="google_storage_bucket" translatable="false">tax-consultant-479e0.appspot.com</string>
+    <string name="project_id" translatable="false">tax-consultant-479e0</string>
+</resources>

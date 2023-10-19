@@ -1,0 +1,4 @@
+#Thu Oct 19 00:22:56 BDT 2023
+base.0=F\:\\FlutterApp\\tax_consultant\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
