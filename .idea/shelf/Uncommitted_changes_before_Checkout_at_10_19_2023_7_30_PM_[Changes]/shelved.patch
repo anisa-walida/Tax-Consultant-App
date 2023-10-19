@@ -1,0 +1,30 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Tax-Consultant-App
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 8664288cbdfefbb52c4d1a2a8e5604567884e2ec)
++++ b/README.md	(date 1697722187223)
+@@ -1,1 +1,17 @@
+-# Tax-Consultant-App
+\ No newline at end of file
++
++# tax_consultant
++
++A new Flutter project.
++
++## Getting Started
++
++This project is a starting point for a Flutter application.
++
++A few resources to get you started if this is your first Flutter project:
++
++- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
++- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
++
++For help getting started with Flutter development, view the
++[online documentation](https://docs.flutter.dev/), which offers tutorials,
++samples, guidance on mobile development, and a full API reference.
