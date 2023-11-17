@@ -1,30 +1,94 @@
 [
     {
-        "merged": "com.example.tax_consultant.app-merged_res-15:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.tax_consultant.app-main-9:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-xxhdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-xxhdpi/android12splash.png"
     },
     {
-        "merged": "com.example.tax_consultant.app-merged_res-15:/drawable_launch_background.xml.flat",
-        "source": "com.example.tax_consultant.app-main-9:/drawable/launch_background.xml"
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-xxhdpi_splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-xxhdpi/splash.png"
     },
     {
-        "merged": "com.example.tax_consultant.app-merged_res-15:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.tax_consultant.app-main-9:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-xxxhdpi_splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-xxxhdpi/splash.png"
     },
     {
-        "merged": "com.example.tax_consultant.app-merged_res-15:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.tax_consultant.app-main-9:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-xxxhdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-xxxhdpi/android12splash.png"
     },
     {
-        "merged": "com.example.tax_consultant.app-merged_res-15:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.tax_consultant.app-main-9:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-night-xxhdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-night-xxhdpi/android12splash.png"
     },
     {
-        "merged": "com.example.tax_consultant.app-merged_res-15:/drawable-v21_launch_background.xml.flat",
-        "source": "com.example.tax_consultant.app-main-9:/drawable-v21/launch_background.xml"
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-hdpi_splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-hdpi/splash.png"
     },
     {
-        "merged": "com.example.tax_consultant.app-merged_res-15:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.tax_consultant.app-main-9:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-mdpi_splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-mdpi/splash.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-night-xhdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-night-xhdpi/android12splash.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable_launch_background.xml.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable/launch_background.xml"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-mdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-mdpi/android12splash.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-night-mdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-night-mdpi/android12splash.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-v21_launch_background.xml.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-xhdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-xhdpi/android12splash.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-v21_background.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-v21/background.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-night-hdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-night-hdpi/android12splash.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-hdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-hdpi/android12splash.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-xhdpi_splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-xhdpi/splash.png"
+    },
+    {
+        "merged": "com.example.tax_consultant.app-merged_res-20:/drawable-night-xxxhdpi_android12splash.png.flat",
+        "source": "com.example.tax_consultant.app-main-14:/drawable-night-xxxhdpi/android12splash.png"
     }
 ]
