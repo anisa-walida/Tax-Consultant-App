@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tax_consultant/screen/consultant_list_user.dart';
+import 'user_form.dart';
 
 class Appointment extends StatelessWidget {
   final String name;
@@ -152,20 +153,13 @@ class Appointment extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        // Add your button logic here
                         print('Button Pressed!');
-                        FirebaseAuth.instance.createUserWithEmailAndPassword(
-                          email: '$email',
-                          password: '$password',
-                        ).then((value) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => ConsultantList()),
-                          );
-                          updateConsultantStatus();
-                        }).onError((error, stackTrace) {
-                          print("Error ${error.toString()}");
-                        });
+
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => UserForm(name: name, fees: fees, address: address, uniqueKey: uniqueKey)),
+                        );
                       },
                       child: Text(
                         'Appointment',
@@ -189,11 +183,6 @@ class Appointment extends StatelessWidget {
                     ),
                   ],
                 )
-
-
-
-
-
 
               ],
             ),

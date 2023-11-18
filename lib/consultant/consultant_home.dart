@@ -15,6 +15,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Consultant_HomeScreen extends StatelessWidget {
   String? userName;
+  final String userUid;
+  Consultant_HomeScreen({required this.userUid});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,27 +107,11 @@ class Consultant_HomeScreen extends StatelessWidget {
 
             SizedBox(height: 100),
 
-            ConsultantGrid(),
+            ConsultantGrid(userUid: userUid),
           ],
         ),
       ),
     );
   }
-/*_fetch() async{
-    final firebaseUser = await FirebaseAuth.instance.currentUser;
-    if (firebaseUser != null)
-
-      await  Firestore.instance.collection("User").document(firebaseUser.uid).get().then((ds) {
-        userName = ds.data['email'];
-        print(userName);
-
-      }).catchError((e){
-        print(e);
-      });
-
-
-  }*/
-
-
 }
 

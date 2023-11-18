@@ -18,31 +18,34 @@ class ButtonWidget extends StatelessWidget {
     required this.onClicked
 }): super(key: key);
 
-  @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      onPressed: onClicked,
       style: ElevatedButton.styleFrom(
-        primary: Colors.brown,
-        minimumSize: Size.fromHeight(50),
+        primary: Colors.black, // Change the color to match your design
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
       ),
-        onPressed: onClicked,
-        child:buildContent());
+      child: buildContent(),
+    );
   }
+
   Widget buildContent() => Row(
     mainAxisSize: MainAxisSize.min,
     children: [
-      Icon(icon,size:28),
+      Icon(icon, size: 28),
       SizedBox(
         width: 16,
       ),
       Text(
-          text,
-        style:TextStyle(
-          fontSize: 22,
+        text,
+        style: TextStyle(
+          fontSize: 16, // Adjust the font size to match your design
+          fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
       ),
-
     ],
   );
 }

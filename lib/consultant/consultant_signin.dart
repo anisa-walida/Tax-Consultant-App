@@ -60,17 +60,27 @@ class _SignInScreenState extends State<Consulant_SignInScreen> {
                 SizedBox(
                   height: 50,
                 ),
-                signInSignUpButton(context, true, () {
-                  FirebaseAuth.instance.signInWithEmailAndPassword(
-                    email: _emailTextController.text,
-                    password: _passwordTextController.text,
-                  ).then((value) {
-                    Navigator.push(context, MaterialPageRoute(builder:
-                        (context)=>Consultant_HomeScreen()
-                    ));
-                  }).onError((error, stackTrace) {
+                signInSignUpButton(context, true, () async {
+                  try {
+                    UserCredential userCredential =
+                    await FirebaseAuth.instance.signInWithEmailAndPassword(
+                      email: _emailTextController.text,
+                      password: _passwordTextController.text,
+                    );
+
+                    String userUid = userCredential.user?.uid ?? "";
+                    print('User UID: $userUid');
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Consultant_HomeScreen(userUid: userUid),
+                      ),
+                    );
+                  } catch (error) {
                     print("Error ${error.toString()}");
-                  });
+                    // Handle the error as needed
+                  }
                 }),
                 signUpOption(),
                 SizedBox(

@@ -62,7 +62,7 @@ class DetailPage extends StatelessWidget {
         child: Column(
           children: [
             // First Row
-            Row(
+            Row (
               children: [
 
                 Icon(
@@ -235,34 +235,30 @@ class DetailPage extends StatelessWidget {
               children: [
                 SizedBox(width: 2.0), // Extra space on the left
                 ElevatedButton(
-                  onPressed: () {
-                    // Add your approve button logic here
-                    print('Approved!');
-                    print('$email');
-                    print('$password');
+                  onPressed: () async {
+                    try {
+                      print('Approved!');
+                      print('$email');
+                      print('$password');
 
+                      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                        email: '$email',
+                        password: '$password',
+                      );
 
-                    FirebaseAuth.instance.createUserWithEmailAndPassword(
-                      email:'$email',
-                      password:'$password',
-                    ).then((value){
-                      Navigator.push(context, MaterialPageRoute(builder:
-                          (context)=>FetchData()
+                      String userUid = userCredential.user?.uid ?? "";
+                      print('User UID: $userUid');
 
-                      ));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => FetchData()));
+                      createDatabaseId(userUid, uniqueKey);
                       updateConsultantStatus();
-
-                    }).onError((error, stackTrace) {
+                    } catch (error) {
                       print("Error ${error.toString()}");
-
-                    });
-
-
-
-
-
-
+                      // Handle the error as needed
+                    }
                   },
+
+
 
 
                   child: Text(
@@ -323,6 +319,30 @@ class DetailPage extends StatelessWidget {
       ),
     );
   }
+  Future<void> createDatabaseId(String userUid, String uniqueKey) async {
+    try {
+      // Initialize Firebase
+      //await Firebase.initializeApp();
+
+      // Reference to the root of the Realtime Database
+      final databaseReference = FirebaseDatabase.instance.reference();
+
+      // Replace 'consultants' with your actual Firebase Realtime Database node
+      // Create a node using the uniqueKey as the key
+      await databaseReference.child('id').child(uniqueKey).set({
+        'userUid': userUid,
+        'uniqueKey': uniqueKey,
+      });
+
+      print('DatabaseId created successfully with key: $uniqueKey');
+    } catch (error, stackTrace) {
+      print('Error creating DatabaseId: $error');
+      print('Stack trace: $stackTrace');
+    }
+  }
+
+
+
   Future<void> deleteConsultant() async {
     print('Deleting consultant with name: $uniqueKey');
 
@@ -338,6 +358,8 @@ class DetailPage extends StatelessWidget {
       print('Stack trace: $stackTrace');
     }
   }
+
+
   Future<void> updateConsultantStatus() async {
     print('Updating consultant status with name: $uniqueKey');
 

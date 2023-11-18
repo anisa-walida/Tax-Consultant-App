@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tax_consultant/utils/color_utils.dart';
+import 'confirm_client.dart';
 
 
 class ConsultantGrid extends StatelessWidget {
-  ConsultantGrid({super.key});
+  final String userUid;
+
+  ConsultantGrid({required this.userUid});
   Item item1= new Item(
     title: "Schedule of \nAppointment",
     img: "assets/images/schedule.png",
@@ -62,14 +65,14 @@ class ConsultantGrid extends StatelessWidget {
                 ),
               ),
               onTap: (){
-                /*
-                if(data == item1)
+
+                if(data == item2)
                 {
                   Navigator.push(context, MaterialPageRoute(builder:
-                      (context)=>FetchData()
+                      (context)=>ConfirmClient(userUid: userUid)
                   ));
                 }
-                  */
+
               },
             );
 
