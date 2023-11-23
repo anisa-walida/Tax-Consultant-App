@@ -15,10 +15,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Consultant_HomeScreen extends StatelessWidget {
   String? userName;
-  final String userUid;
-  Consultant_HomeScreen({required this.userUid});
+  final String consultant_userUid;
+  Consultant_HomeScreen({required this.consultant_userUid});
   @override
   Widget build(BuildContext context) {
+    print("$consultant_userUid");
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -107,7 +108,7 @@ class Consultant_HomeScreen extends StatelessWidget {
 
             SizedBox(height: 100),
 
-            ConsultantGrid(userUid: userUid),
+            ConsultantGrid(consultant_userUid: consultant_userUid),
           ],
         ),
       ),

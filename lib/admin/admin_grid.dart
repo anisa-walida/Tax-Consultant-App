@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tax_consultant/utils/color_utils.dart';
 import 'fetch_data.dart';
+import 'update_tax_rules.dart';
+import 'consultant_list_admin.dart';
 
 class AdminGrid extends StatelessWidget {
   AdminGrid({super.key});
@@ -34,33 +36,33 @@ class AdminGrid extends StatelessWidget {
           children:
           MyList.map((data) {
             return GestureDetector(
-                child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [
 
-                      hexStringToColor("C3B091"),
-                      hexStringToColor("483C32"),
-                      // hexStringToColor("563d2d"),
-                    ],begin: Alignment.topCenter, end: Alignment.bottomCenter
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(data.img,width: 42,),
-                  SizedBox(
-                    height: 18,
+                        hexStringToColor("C3B091"),
+                        hexStringToColor("483C32"),
+                        // hexStringToColor("563d2d"),
+                      ],begin: Alignment.topCenter, end: Alignment.bottomCenter
                   ),
-                  Text(data.title,style: TextStyle(
-                    color: Colors.brown[100],
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),)
-                ],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(data.img,width: 42,),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Text(data.title,style: TextStyle(
+                      color: Colors.brown[100],
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),)
+                  ],
+                ),
               ),
-            ),
               onTap: (){
 
                 if(data == item1)
@@ -69,9 +71,22 @@ class AdminGrid extends StatelessWidget {
                       (context)=>FetchData()
                   ));
                 }
+                if(data == item2)
+                {
+                  Navigator.push(context, MaterialPageRoute(builder:
+                      (context)=>UpdateTax()
+                  ));
+                }
+
+                if(data == item4)
+                {
+                  Navigator.push(context, MaterialPageRoute(builder:
+                      (context)=>ConsultantListAdmin()
+                  ));
+                }
 
               },
-                );
+            );
 
           }).toList()
 

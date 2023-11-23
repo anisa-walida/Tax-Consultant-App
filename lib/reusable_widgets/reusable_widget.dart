@@ -18,7 +18,7 @@ Image logoWidget(String imageName)
 }
 
 TextField reusableTextField(String text, IconData icon, bool isPasswordType,
-TextEditingController controller)
+    TextEditingController controller)
 {
   return TextField(
     controller: controller,
@@ -30,18 +30,18 @@ TextEditingController controller)
       color: Colors.white.withOpacity(0.9),
     ),
     decoration: InputDecoration(prefixIcon: Icon(icon,color: Colors.brown[500],),
-      labelText: text,
-      labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
-      filled: true,
-      floatingLabelBehavior: FloatingLabelBehavior.never,
-      fillColor: Colors.white.withOpacity(0.3),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30.0),
-        borderSide:const BorderSide(
-          width: 0,
-          style: BorderStyle.none,
+        labelText: text,
+        labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
+        filled: true,
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+        fillColor: Colors.white.withOpacity(0.3),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            borderSide:const BorderSide(
+              width: 0,
+              style: BorderStyle.none,
+            )
         )
-      )
 
     ),
     keyboardType: isPasswordType ? TextInputType.visiblePassword:
@@ -55,7 +55,7 @@ Container Consultant_TextField(bool isPasswordType,
 {
   return Container(
     height: 40.0,
-   // alignment: Alignment.center,
+    // alignment: Alignment.center,
     child: TextField(
       controller: controller,
       obscureText: isPasswordType,
@@ -85,9 +85,38 @@ Container Consultant_TextField(bool isPasswordType,
 
 }
 
+Container Admin_TextField(TextEditingController controller) {
+  return Container(
+    child: TextField(
+      controller: controller,
+      cursorColor: Colors.white,
+      style: TextStyle(
+        color: Colors.white.withOpacity(0.9),
+      ),
+      decoration: InputDecoration(
+        labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
+        filled: true,
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+        fillColor: Colors.white.withOpacity(0.3),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30.0),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
+        ),
+      ),
+      maxLines: null, // Allow for unlimited lines
+      keyboardType: TextInputType.multiline,
+    ),
+  );
+}
+
+
+
 Container signInSignUpButton(
-BuildContext context, bool isLogin, Function onTap
-) {
+    BuildContext context, bool isLogin, Function onTap
+    ) {
   return Container(
     width: MediaQuery
         .of(context)

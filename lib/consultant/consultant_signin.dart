@@ -68,13 +68,13 @@ class _SignInScreenState extends State<Consulant_SignInScreen> {
                       password: _passwordTextController.text,
                     );
 
-                    String userUid = userCredential.user?.uid ?? "";
-                    print('User UID: $userUid');
+                    String consultant_userUid = userCredential.user?.uid ?? "";
+                    print('User UID: $consultant_userUid');
 
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Consultant_HomeScreen(userUid: userUid),
+                        builder: (context) => Consultant_HomeScreen(consultant_userUid: consultant_userUid),
                       ),
                     );
                   } catch (error) {

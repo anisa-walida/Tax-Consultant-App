@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tax_consultant/utils/color_utils.dart';
 import 'confirm_client.dart';
+import 'pre_confirm_client.dart';
 
 
 class ConsultantGrid extends StatelessWidget {
-  final String userUid;
+  final String consultant_userUid;
 
-  ConsultantGrid({required this.userUid});
+  ConsultantGrid({required this.consultant_userUid});
   Item item1= new Item(
     title: "Schedule of \nAppointment",
     img: "assets/images/schedule.png",
@@ -69,7 +70,7 @@ class ConsultantGrid extends StatelessWidget {
                 if(data == item2)
                 {
                   Navigator.push(context, MaterialPageRoute(builder:
-                      (context)=>ConfirmClient(userUid: userUid)
+                      (context)=>PreConfirmClient(consultant_userUid: consultant_userUid)
                   ));
                 }
 

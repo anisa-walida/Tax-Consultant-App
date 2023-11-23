@@ -28,6 +28,8 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String consultant_form ;
+    consultant_form = uniqueKey;
 
     // Use the userKey as needed in your detail page
     return Scaffold(
@@ -248,10 +250,12 @@ class DetailPage extends StatelessWidget {
 
                       String userUid = userCredential.user?.uid ?? "";
                       print('User UID: $userUid');
+                      print('Consultant: $consultant_form');
+
 
                       Navigator.push(context, MaterialPageRoute(builder: (context) => FetchData()));
-                      createDatabaseId(userUid, uniqueKey);
-                      updateConsultantStatus();
+                      createDatabaseId(userUid, consultant_form);
+                      updateConsultantStatus(userUid);
                     } catch (error) {
                       print("Error ${error.toString()}");
                       // Handle the error as needed
@@ -360,7 +364,7 @@ class DetailPage extends StatelessWidget {
   }
 
 
-  Future<void> updateConsultantStatus() async {
+  Future<void> updateConsultantStatus(String userUid) async {
     print('Updating consultant status with name: $uniqueKey');
 
     try {
@@ -370,6 +374,7 @@ class DetailPage extends StatelessWidget {
       // Replace 'consultants' with your actual Firebase database node
       await databaseReference.child('consultant').child(uniqueKey).update({
         'check': 'Approved',
+        'consultant_userUid': userUid,
       });
 
       print('Consultant status updated successfully');
