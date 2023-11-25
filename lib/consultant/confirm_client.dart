@@ -18,7 +18,7 @@ class _ConfirmClientState extends State<ConfirmClient> {
   Query dbRef = FirebaseDatabase.instance.ref().child('guser');
   Query dbRef2 = FirebaseDatabase.instance.ref().child('consultant');
   bool isConditionMet = false;
-
+  int count = 0 ;
   Widget listItem({required Map guser, required Function onTap}) {
     return GestureDetector(
       onTap: () {
@@ -32,6 +32,8 @@ class _ConfirmClientState extends State<ConfirmClient> {
           guser['phone'],
           guser['uniqueKey_consultant'],
           guser['uniqueKey_user'],
+          guser['stime'],
+          guser['sdate'],
         );
       },
       child: Container(
@@ -118,7 +120,7 @@ class _ConfirmClientState extends State<ConfirmClient> {
 
                   if (guser['uniqueKey_consultant']==widget.uniqueKey && guser['check'] == "pending") {
 
-
+                    count++;
                     return listItem(
                         guser: guser, onTap: navigateToDetailPage);
                   }
@@ -126,17 +128,21 @@ class _ConfirmClientState extends State<ConfirmClient> {
                 },
               ),
             ),
-
-
+            if (count == 0)
+              Container(
+                child: Text("Nothing"),
+              ),
           ],
         ),
+
       ),
     );
+
   }
 
   void navigateToDetailPage(String name, String email, String address,
       String date_of_birth, String check, String occupation, String phone,
-      String uniqueKey_consultant, String uniqueKey_user) {
+      String uniqueKey_consultant, String uniqueKey_user,String stime, String sdate) {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -150,6 +156,8 @@ class _ConfirmClientState extends State<ConfirmClient> {
           phone: phone,
           uniqueKey_consultant: uniqueKey_consultant,
           uniqueKey_user: uniqueKey_user,
+          stime: stime,
+          sdate: sdate,
         ),
       ),
     );

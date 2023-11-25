@@ -9,9 +9,7 @@ import 'package:file_picker/file_picker.dart';
 
 import 'package:tax_consultant/consultant/button_widget.dart';
 import 'package:firebase_database/firebase_database.dart';
-
-import 'package:path/path.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:tax_consultant/utils/get_user_gid.dart';
 
 import 'dart:io';
 class UserForm extends StatefulWidget {
@@ -35,6 +33,8 @@ class _UserFormState extends State<UserForm> {
 
 
   String check="pending";
+  String stime = "none";
+  String sdate = "none";
   bool match=true;
   String? uniqueKey;
   //String uniquekey_user;
@@ -410,6 +410,7 @@ class _UserFormState extends State<UserForm> {
                   onClicked: () async {
                     DatabaseReference newguserRef = dbRef.push();
                     String uniqueKey_user = newguserRef.key!;
+                    String guser_userUid = UserInformation.guser_userUid;
 
                     Map<String, String> guser = {
                       'name': _userNameTextController.text,
@@ -421,6 +422,9 @@ class _UserFormState extends State<UserForm> {
                       'uniqueKey_user': uniqueKey_user,
                       'uniqueKey_consultant': widget.uniqueKey,
                       'check': check,
+                      'stime':stime,
+                      'sdate':sdate,
+                      'guser_userUid': guser_userUid,
                     };
 
                     await newguserRef.set(guser);

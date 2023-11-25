@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-
-class Schedule_Appoint extends StatelessWidget {
+import 'package:tax_consultant/utils/color_utils.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'scheduled_fixed.dart';
+class Schedule_Appoint extends StatefulWidget {
   final String name;
   final String email;
   final String address;
@@ -10,6 +14,9 @@ class Schedule_Appoint extends StatelessWidget {
   final String phone;
   final String uniqueKey_consultant;
   final String uniqueKey_user;
+  final String stime;
+  final String sdate;
+
 
   Schedule_Appoint({
     required this.name,
@@ -21,37 +28,252 @@ class Schedule_Appoint extends StatelessWidget {
     required this.phone,
     required this.uniqueKey_consultant,
     required this.uniqueKey_user,
+    required this.stime,
+    required this.sdate,
   });
 
+  @override
+  State<Schedule_Appoint> createState() => _Schedule_AppointState();
+}
+
+class _Schedule_AppointState extends State<Schedule_Appoint> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Schedule Appointment"),
+        backgroundColor: Colors.brown[100],
+        elevation: 0,
+
+        title: Text('Detail information of ${widget.name}',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.brown,
+          ),
+        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [
+                  hexStringToColor("ece2dc"),
+                  hexStringToColor("d2b48c"),
+                ],begin: Alignment.topCenter, end: Alignment.bottomCenter
+            )
+        ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Name: $name", style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10),
-            Text("Email: $email", style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10),
-            Text("Address: $address", style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10),
-            Text("Date of Birth: $date_of_birth", style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10),
-            Text("Check: $check", style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10),
-            Text("Occupation: $occupation", style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10),
-            Text("Phone: $phone", style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10),
-            Text("Consultant Key: $uniqueKey_consultant", style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10),
-            Text("User Key: $uniqueKey_user", style: TextStyle(fontSize: 18)),
+            Row(
+              children: [
+
+                Icon(
+                  Icons.person,
+                  color: Colors.brown,
+                  size: 150,
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${widget.name}',
+                      style: TextStyle(
+                        color: Colors.brown,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 32,
+                      ),
+                    ),
+                    Text(
+                      ' ${widget.email}',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      '${widget.phone}',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Divider(height: 70.0, color: Colors.black,),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+
+                  children: [
+
+                    Text(
+                      ' Occupation:${widget.occupation} ',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 18,
+                      ),
+                    ),
+                    Text(
+                      ' Date_Of_Birth:${widget.date_of_birth}',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 18,
+                      ),
+                    ),
+
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 50),
+
+            Divider(height: 70.0, color: Colors.black,),
+            SizedBox(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(width: 2.0), // Extra space on the left
+                ElevatedButton(
+                  onPressed: () async {
+                    navigateToDetailPage(
+                      widget.name,
+                      widget.email,
+                      widget.address,
+                      widget.date_of_birth,
+                      widget.check, // Keep the existing check status
+                      widget.occupation,
+                      widget.phone,
+                      widget.uniqueKey_consultant,
+                      widget.uniqueKey_user,
+                      widget.stime,
+                      widget.sdate,
+                    );
+                    //updateGuser_to_current(uniqueKey_user);
+                  },
+
+
+
+
+                  child: Text(
+                    'Approve',
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith((states) {
+                        if (states.contains(MaterialState.pressed)) {
+                          return Colors.black;
+                        }
+                        return Colors.black54;
+                      }),
+                      shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))
+                      )
+                  ),
+                ),
+
+                SizedBox(width: 16.0), // Adjust the width for the gap between buttons
+                ElevatedButton(
+                  onPressed: () {
+                    // Add your reject button logic here
+                    print('Rejected!');
+                    updateGuser_to_rejected(widget.uniqueKey_user);
+                  },
+
+
+                  child: Text(
+                    'Reject',
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith((states) {
+                        if (states.contains(MaterialState.pressed)) {
+                          return Colors.black;
+                        }
+                        return Colors.black54;
+                      }),
+                      shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))
+                      )
+                  ),
+                ),
+                SizedBox(width: 2.0), // Extra space on the right
+              ],
+            )
           ],
+
+        ),
+      ),
+    );
+  }
+
+  Future<void> updateGuser_to_current(String uniqueKey_user) async {
+    print('Updating consultant status with name: $uniqueKey_user');
+
+    try {
+      await Firebase.initializeApp();
+      final databaseReference = FirebaseDatabase.instance.reference();
+
+      // Replace 'consultants' with your actual Firebase database node
+      await databaseReference.child('guser').child(uniqueKey_user).update({
+        'check': 'current',
+      });
+
+      print('Consultant status updated successfully');
+    } catch (error, stackTrace) {
+      print('Failed to update consultant status: $error');
+      print('Stack trace: $stackTrace');
+    }
+  }
+
+  Future<void> updateGuser_to_rejected(String uniqueKey_user) async {
+    print('Updating consultant status with name: $uniqueKey_user');
+
+    try {
+      await Firebase.initializeApp();
+      final databaseReference = FirebaseDatabase.instance.reference();
+
+      // Replace 'consultants' with your actual Firebase database node
+      await databaseReference.child('guser').child(uniqueKey_user).update({
+        'check': 'rejected',
+      });
+
+      print('Consultant status updated successfully');
+    } catch (error, stackTrace) {
+      print('Failed to update consultant status: $error');
+      print('Stack trace: $stackTrace');
+    }
+  }
+
+  void navigateToDetailPage(String name, String email, String address,
+      String date_of_birth, String check, String occupation, String phone,
+      String uniqueKey_consultant, String uniqueKey_user,String stime, String sdate) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ScheduleFixed(
+          name: name,
+          email: email,
+          address: address,
+          date_of_birth : date_of_birth,
+          check: check,
+          occupation: occupation,
+          phone: phone,
+          uniqueKey_consultant: uniqueKey_consultant,
+          uniqueKey_user: uniqueKey_user,
+          stime: stime,
+          sdate: sdate,
         ),
       ),
     );

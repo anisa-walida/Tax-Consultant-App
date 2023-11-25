@@ -4,6 +4,7 @@ import 'package:tax_consultant/reusable_widgets/reusable_widget.dart';
 import 'package:tax_consultant/screen/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tax_consultant/screen/home_screen.dart';
+import 'package:tax_consultant/utils/get_user_gid.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -13,37 +14,36 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  TextEditingController _passwordTextController=TextEditingController();
-  TextEditingController _emailTextController=TextEditingController();
+  TextEditingController _passwordTextController = TextEditingController();
+  TextEditingController _emailTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [
-                hexStringToColor("F5F5EF"),
-                hexStringToColor("C2B280"),
-                hexStringToColor("B69D74"),
-              ],begin: Alignment.topCenter, end: Alignment.bottomCenter
-          )
-        ),
+            gradient: LinearGradient(
+                colors: [
+                  hexStringToColor("F5F5EF"),
+                  hexStringToColor("C2B280"),
+                  hexStringToColor("B69D74"),
+                ],
+                begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(
                 20, MediaQuery.of(context).size.width * 0.2, 20, 0),
             child: Column(
-              children: <Widget>  [
+              children: <Widget>[
                 logoWidget("assets/images/tax_consultant_logo.png"),
                 SizedBox(
                   height: 0.1,
                 ),
                 reusableTextField(
-                    "Enter User Name",
-                    Icons.person_outline,
-                    false,
-                    _emailTextController,
+                  "Enter User Name",
+                  Icons.person_outline,
+                  false,
+                  _emailTextController,
                 ),
 
                 SizedBox(
@@ -59,16 +59,26 @@ class _SignInScreenState extends State<SignInScreen> {
                   height: 50,
                 ),
                 signInSignUpButton(context, true, () {
-                   FirebaseAuth.instance.signInWithEmailAndPassword(
-                       email: _emailTextController.text,
-                       password: _passwordTextController.text,
-                   ).then((value) {
-                     Navigator.push(context, MaterialPageRoute(builder:
-                         (context)=>HomeScreen()
-                     ));
-                   }).onError((error, stackTrace) {
-                     print("Error ${error.toString()}");
-                   });
+                  FirebaseAuth.instance
+                      .signInWithEmailAndPassword(
+                    email: _emailTextController.text,
+                    password: _passwordTextController.text,
+                  )
+                      .then((userCredential) {
+                    // Fetch user UID after successful sign-in
+                    UserInformation.setGuserUserUid(userCredential.user?.uid ?? "");
+                    print("User UID: ${UserInformation.guser_userUid}");
+
+                    // Navigate to the home screen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeScreen(),
+                      ),
+                    );
+                  }).onError((error, stackTrace) {
+                    print("Error ${error.toString()}");
+                  });
                 }),
                 signUpOption(),
                 SizedBox(
@@ -81,19 +91,26 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
+
   Row signUpOption() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Don't have an account?",
-        style: TextStyle(
-          color: Colors.white70,
-        ),),
-        GestureDetector(onTap: (){
-          Navigator.push(
-            context,MaterialPageRoute(builder: (context)=>SignUpScreen())
-          );
-        },
+        const Text(
+          "Don't have an account?",
+          style: TextStyle(
+            color: Colors.white70,
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SignUpScreen()
+                )
+            );
+          },
           child: const Text(
             " Sign Up ",
             style: TextStyle(
@@ -106,5 +123,3 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 }
-
-
