@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tax_consultant/utils/color_utils.dart';
-import 'confirm_client.dart';
+//import 'confirm_client.dart';
 import 'pre_confirm_client.dart';
+import 'show_appointments.dart';
+//import 'confirm_client.dart';
+import 'pre_confirm_client.dart';
+import 'consultant_client_list.dart';
+import 'talk_to_your_client.dart';
 
 
 class ConsultantGrid extends StatelessWidget {
@@ -73,11 +78,30 @@ class ConsultantGrid extends StatelessWidget {
                       (context)=>PreConfirmClient(consultant_userUid: consultant_userUid)
                   ));
                 }
+                if(data == item1)
+                {
+                  Navigator.push(context, MaterialPageRoute(builder:
+                      (context)=>ShowAppointment(consultant_userUid: consultant_userUid)
+                  ));
+                }
+                if(data == item3)
+                {
+                  Navigator.push(context, MaterialPageRoute(builder:
+                      (context)=>TalkToClient(consultant_userUid: consultant_userUid)
+                  ));
+                }
+                if(data == item4)
+                {
+                  Navigator.push(context, MaterialPageRoute(builder:
+                      (context)=>ClientList(consultant_userUid: consultant_userUid)
+                  ));
+                }
 
               },
             );
 
           }).toList()
+
 
       ),);
   }

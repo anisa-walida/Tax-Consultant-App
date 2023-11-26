@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tax_consultant/screen/consultant_list_user.dart';
 import 'package:tax_consultant/screen/tax_rules.dart';
 import 'package:tax_consultant/utils/color_utils.dart';
+import 'package:tax_consultant/screen/talk_to_your_consultant.dart';
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -79,9 +80,11 @@ class GridDashboard extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => TaxRules()));
               } else if (data == item3) {
                 launchBkashApp(context);
+              } else if (data == item4) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TalkToConsultant()));
               } else {
                 print('Tapped item: ${data.title}');
-              }
+              }//TalkToConsultant
             },
           );
         }).toList(),

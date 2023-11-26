@@ -31,11 +31,11 @@
 22-->[:file_picker] E:\Tax-Consultant-App\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-44
 22-->[:file_picker] E:\Tax-Consultant-App\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:19-41
 23        </intent>
-24    </queries>
-25
+24    </queries> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+25    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 26    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-26-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\HP\.gradle\caches\transforms-3\6babbe504ba543d24f6bddd20968769b\transformed\jetified-firebase-auth-22.2.0\AndroidManifest.xml:26:5-79
-26-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\HP\.gradle\caches\transforms-3\6babbe504ba543d24f6bddd20968769b\transformed\jetified-firebase-auth-22.2.0\AndroidManifest.xml:26:22-76
+26-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:22:5-79
+26-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:22:22-76
 27    <uses-permission android:name="android.permission.WAKE_LOCK" />
 27-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\HP\.gradle\caches\transforms-3\e3a440642c7f5d9e53c05230157ad416\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:24:5-68
 27-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\HP\.gradle\caches\transforms-3\e3a440642c7f5d9e53c05230157ad416\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:24:22-65
@@ -104,37 +104,37 @@
 76            android:value="2" />
 77
 78        <service
-78-->[:firebase_auth] E:\Tax-Consultant-App\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+78-->[:firebase_database] E:\Tax-Consultant-App\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
 79            android:name="com.google.firebase.components.ComponentDiscoveryService"
-79-->[:firebase_auth] E:\Tax-Consultant-App\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+79-->[:firebase_database] E:\Tax-Consultant-App\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 80            android:directBootAware="true"
 80-->[com.google.firebase:firebase-common:20.4.2] C:\Users\HP\.gradle\caches\transforms-3\1ca0709d7bd424dd61de73a16a088095\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:32:13-43
 81            android:exported="false" >
-81-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\HP\.gradle\caches\transforms-3\6babbe504ba543d24f6bddd20968769b\transformed\jetified-firebase-auth-22.2.0\AndroidManifest.xml:68:13-37
+81-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:28:13-37
 82            <meta-data
-82-->[:firebase_auth] E:\Tax-Consultant-App\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
-83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-83-->[:firebase_auth] E:\Tax-Consultant-App\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+82-->[:firebase_database] E:\Tax-Consultant-App\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
+83-->[:firebase_database] E:\Tax-Consultant-App\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-127
 84                android:value="com.google.firebase.components.ComponentRegistrar" />
-84-->[:firebase_auth] E:\Tax-Consultant-App\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+84-->[:firebase_database] E:\Tax-Consultant-App\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 85            <meta-data
-85-->[:firebase_database] E:\Tax-Consultant-App\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
-86                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
-86-->[:firebase_database] E:\Tax-Consultant-App\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-127
+85-->[:cloud_firestore] E:\Tax-Consultant-App\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+86                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+86-->[:cloud_firestore] E:\Tax-Consultant-App\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
 87                android:value="com.google.firebase.components.ComponentRegistrar" />
-87-->[:firebase_database] E:\Tax-Consultant-App\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+87-->[:cloud_firestore] E:\Tax-Consultant-App\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 88            <meta-data
-88-->[:firebase_storage] E:\Tax-Consultant-App\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
-89                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-89-->[:firebase_storage] E:\Tax-Consultant-App\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-126
+88-->[:firebase_auth] E:\Tax-Consultant-App\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+89                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+89-->[:firebase_auth] E:\Tax-Consultant-App\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 90                android:value="com.google.firebase.components.ComponentRegistrar" />
-90-->[:firebase_storage] E:\Tax-Consultant-App\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+90-->[:firebase_auth] E:\Tax-Consultant-App\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 91            <meta-data
-91-->[:cloud_firestore] E:\Tax-Consultant-App\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
-92                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-92-->[:cloud_firestore] E:\Tax-Consultant-App\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
+91-->[:firebase_storage] E:\Tax-Consultant-App\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+92                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+92-->[:firebase_storage] E:\Tax-Consultant-App\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-126
 93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[:cloud_firestore] E:\Tax-Consultant-App\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+93-->[:firebase_storage] E:\Tax-Consultant-App\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 94            <meta-data
 94-->[:firebase_core] E:\Tax-Consultant-App\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 95                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
@@ -142,47 +142,47 @@
 96                android:value="com.google.firebase.components.ComponentRegistrar" />
 96-->[:firebase_core] E:\Tax-Consultant-App\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 97            <meta-data
-97-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\HP\.gradle\caches\transforms-3\6babbe504ba543d24f6bddd20968769b\transformed\jetified-firebase-auth-22.2.0\AndroidManifest.xml:69:13-71:85
-98                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-98-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\HP\.gradle\caches\transforms-3\6babbe504ba543d24f6bddd20968769b\transformed\jetified-firebase-auth-22.2.0\AndroidManifest.xml:70:17-109
+97-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:29:13-31:85
+98                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
+98-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:30:17-120
 99                android:value="com.google.firebase.components.ComponentRegistrar" />
-99-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\HP\.gradle\caches\transforms-3\6babbe504ba543d24f6bddd20968769b\transformed\jetified-firebase-auth-22.2.0\AndroidManifest.xml:71:17-82
+99-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:31:17-82
 100            <meta-data
-100-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:29:13-31:85
-101                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
-101-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:30:17-120
+100-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:32:13-34:85
+101                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+101-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:33:17-109
 102                android:value="com.google.firebase.components.ComponentRegistrar" />
-102-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:31:17-82
+102-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:34:17-82
 103            <meta-data
-103-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:32:13-34:85
-104                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-104-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:33:17-109
+103-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:17:13-19:85
+104                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+104-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:18:17-122
 105                android:value="com.google.firebase.components.ComponentRegistrar" />
-105-->[com.google.firebase:firebase-database:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\5fb3b1f8491f82192c9c852dba5609bb\transformed\jetified-firebase-database-20.3.0\AndroidManifest.xml:34:17-82
+105-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:19:17-82
 106            <meta-data
-106-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:30:13-32:85
-107                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
-107-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:31:17-118
+106-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:20:13-22:85
+107                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+107-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:21:17-111
 108                android:value="com.google.firebase.components.ComponentRegistrar" />
-108-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:32:17-82
+108-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:22:17-82
 109            <meta-data
-109-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:33:13-35:85
-110                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-110-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:34:17-107
+109-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\HP\.gradle\caches\transforms-3\6babbe504ba543d24f6bddd20968769b\transformed\jetified-firebase-auth-22.2.0\AndroidManifest.xml:69:13-71:85
+110                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+110-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\HP\.gradle\caches\transforms-3\6babbe504ba543d24f6bddd20968769b\transformed\jetified-firebase-auth-22.2.0\AndroidManifest.xml:70:17-109
 111                android:value="com.google.firebase.components.ComponentRegistrar" />
-111-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:35:17-82
+111-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\HP\.gradle\caches\transforms-3\6babbe504ba543d24f6bddd20968769b\transformed\jetified-firebase-auth-22.2.0\AndroidManifest.xml:71:17-82
 112            <meta-data
-112-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:17:13-19:85
-113                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
-113-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:18:17-122
+112-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:30:13-32:85
+113                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
+113-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:31:17-118
 114                android:value="com.google.firebase.components.ComponentRegistrar" />
-114-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:19:17-82
+114-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:32:17-82
 115            <meta-data
-115-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:20:13-22:85
-116                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-116-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:21:17-111
+115-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:33:13-35:85
+116                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+116-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:34:17-107
 117                android:value="com.google.firebase.components.ComponentRegistrar" />
-117-->[com.google.firebase:firebase-firestore:24.9.1] C:\Users\HP\.gradle\caches\transforms-3\e30291f1630197ae0bb1f80fd903ec56\transformed\jetified-firebase-firestore-24.9.1\AndroidManifest.xml:22:17-82
+117-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\HP\.gradle\caches\transforms-3\4c4e485b71fcb3fcdf8e0620fc34f53c\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:35:17-82
 118            <meta-data
 118-->[com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\HP\.gradle\caches\transforms-3\e3a440642c7f5d9e53c05230157ad416\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:37:13-39:85
 119                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"

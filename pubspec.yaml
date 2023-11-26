@@ -47,7 +47,8 @@ dev_dependencies:
   firebase_storage: ^11.4.1
   firebase_database: ^10.3.3
   url_launcher: ^6.2.1
-
+  intl: ^0.18.1
+  shared_preferences: ^2.2.2
 
 
 
@@ -89,6 +90,7 @@ flutter:
     - assets/images/confirm.png
     - assets/images/schedule.png
     - assets/images/home_logo.png
+    - assets/images/checklist.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

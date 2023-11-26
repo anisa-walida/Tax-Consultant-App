@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tax_consultant/utils/color_utils.dart';
-import 'package:tax_consultant/reusable_widgets/reusable_widget.dart';
+import 'package:tax_consultant/reusable_widgets/reusable_date_picker.dart';
+import 'package:tax_consultant/reusable_widgets/reusable_time_picker.dart';
 import 'confirm_client.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 class ScheduleFixed extends StatefulWidget {
   final String name;
   final String email;
@@ -33,7 +35,6 @@ class ScheduleFixed extends StatefulWidget {
 
   @override
   State<ScheduleFixed> createState() => _ScheduleFixedState();
-
 }
 
 class _ScheduleFixedState extends State<ScheduleFixed> {
@@ -83,20 +84,18 @@ class _ScheduleFixedState extends State<ScheduleFixed> {
                 SizedBox(
                   height: 40,
                 ),
-                reusableTextField(
-                  "Enter the time HH:MM (24 Hr)",
-                  Icons.timer,
-                  false,
-                  _timeTextController,
+                ReusableTimePickerField(
+                  controller: _timeTextController,
+                  labelText: "Enter the time HH:MM (24 Hr)",
+                  icon: Icons.timer,
                 ),
                 SizedBox(
                   height: 40,
                 ),
-                reusableTextField(
-                  "Enter the date DD-MM-YYYY",
-                  Icons.date_range,
-                  false,
-                  _dateTextController,
+                ReusableDatePickerField(
+                  controller: _dateTextController,
+                  labelText: "Enter the date DD-MM-YYYY",
+                  icon: Icons.date_range,
                 ),
                 SizedBox(
                   height: 40,
@@ -109,7 +108,8 @@ class _ScheduleFixedState extends State<ScheduleFixed> {
                     String dateValue = _dateTextController.text;
 
                     // Pass values to the function
-                    updateGuser_to_current(widget.uniqueKey_user, timeValue, dateValue);
+                     updateGuser_to_current(widget.uniqueKey_user, timeValue, dateValue);
+
 
                     // Navigate to the detail page
                     navigateToDetailPage(widget.uniqueKey_consultant);
@@ -161,6 +161,7 @@ class _ScheduleFixedState extends State<ScheduleFixed> {
     }
   }
 
+
   void navigateToDetailPage(String uniqueKey) {
     Navigator.push(
       context,
@@ -172,6 +173,3 @@ class _ScheduleFixedState extends State<ScheduleFixed> {
     );
   }
 }
-
-
-
