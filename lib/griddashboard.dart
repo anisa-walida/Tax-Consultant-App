@@ -16,15 +16,15 @@ class GridDashboard extends StatelessWidget {
     img: "assets/images/customer.png",
   );
   Item item2 = new Item(
-    title: "Tax Rules",
+    title: "Tax Laws",
     img: "assets/images/court.png",
   );
   Item item3 = new Item(
-    title: "Payment",
+    title: "Online \nPayment",
     img: "assets/images/wallet.png",
   );
   Item item4 = new Item(
-    title: "Talk to your \n Consultant",
+    title: "Contact with \n Consultant",
     img: "assets/images/chat.png",
   );
 

@@ -15,7 +15,7 @@ class ConsultantGrid extends StatelessWidget {
 
   ConsultantGrid({required this.consultant_userUid});
   Item item1= new Item(
-    title: "Schedule of \nAppointment",
+    title: "Schedule of \nAppointments",
     img: "assets/images/schedule.png",
   );
   Item item2= new Item(
@@ -23,7 +23,7 @@ class ConsultantGrid extends StatelessWidget {
     img: "assets/images/confirm.png",
   );
   Item item3= new Item(
-    title: "Talk to your\n Client",
+    title: "Contact with\n     Client",
     img: "assets/images/chat.png",
   );
   Item item4= new Item(

@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:tax_consultant/utils/color_utils.dart';
-import 'package:tax_consultant/admin/detailed_page.dart';
-import 'package:tax_consultant/reusable_widgets/reusable_widget.dart';
-import 'confirm_client.dart';
-import 'all_appoint.dart';
+
 import 'today_client.dart';
 
 class ShowAppointment extends StatefulWidget {
@@ -81,7 +78,7 @@ class _ShowAppointmentState extends State<ShowAppointment> {
         backgroundColor: Colors.brown[100],
         elevation: 0,
         title: const Text(
-          "Consultant Request",
+          "View Appointment",
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,

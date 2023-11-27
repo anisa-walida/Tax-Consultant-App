@@ -88,7 +88,7 @@ class _AllClientState extends State<AllClient> {
         backgroundColor: Colors.brown[100],
         elevation: 0,
         title: const Text(
-          "Client Request",
+          "List of All Clients",
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -137,10 +137,7 @@ class _AllClientState extends State<AllClient> {
                 },
               ),
             ),
-            if (count == 0)
-              Container(
-                child: Text("Nothing"),
-              ),
+
           ],
         ),
       ),

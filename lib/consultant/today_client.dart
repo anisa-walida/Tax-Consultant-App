@@ -118,7 +118,7 @@ class _TodayClientState extends State<TodayClient> {
         backgroundColor: Colors.brown[100],
         elevation: 0,
         title: const Text(
-          "Client Request",
+          "Schedule of Today",
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -144,7 +144,7 @@ class _TodayClientState extends State<TodayClient> {
             itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
               const PopupMenuItem<String>(
                 value: 'showDetails',
-                child: Text('Show Details'),
+                child: Text('Show all Clients'),
               ),
             ],
           ),

@@ -20,7 +20,7 @@ class Switchs extends StatelessWidget {
   );
 
   Item item3= new Item(
-    title: "User",
+    title: "Client",
     img: "assets/images/as_user.png",
 
   );

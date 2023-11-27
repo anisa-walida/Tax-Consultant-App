@@ -83,7 +83,7 @@ class _PreConfirmClientState extends State<PreConfirmClient> {
         backgroundColor: Colors.brown[100],
         elevation: 0,
         title: const Text(
-          "Consultant Request",
+          "View Clients' Request",
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
