@@ -41,6 +41,7 @@ class _PreConfirmClientState extends State<PreConfirmClient> {
           onTap: () {
             onTap(
               consultant['uniqueKey'],
+              consultant['count_client'],
             );
           },
           child: Column(
@@ -132,12 +133,14 @@ class _PreConfirmClientState extends State<PreConfirmClient> {
   }
 
   void navigateToDetailPage(
-      String uniqueKey) {
+      String uniqueKey , String count_client) {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => ConfirmClient(
           uniqueKey: uniqueKey,
+          count_client: count_client,
+
         ),
       ),
     );

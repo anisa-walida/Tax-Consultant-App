@@ -18,6 +18,7 @@ class ScheduleFixed extends StatefulWidget {
   final String uniqueKey_user;
   final String stime;
   final String sdate;
+  final String count_client;
 
   ScheduleFixed({
     required this.name,
@@ -31,6 +32,7 @@ class ScheduleFixed extends StatefulWidget {
     required this.uniqueKey_user,
     required this.stime,
     required this.sdate,
+    required this.count_client,
   });
 
   @override
@@ -108,11 +110,13 @@ class _ScheduleFixedState extends State<ScheduleFixed> {
                     String dateValue = _dateTextController.text;
 
                     // Pass values to the function
-                     updateGuser_to_current(widget.uniqueKey_user, timeValue, dateValue);
-
+                    updateGuserToCurrent(
+                        widget.uniqueKey_user, timeValue, dateValue);
+                    updateConsultant(widget.uniqueKey_consultant , widget.count_client);
 
                     // Navigate to the detail page
-                    navigateToDetailPage(widget.uniqueKey_consultant);
+                    navigateToDetailPage(
+                        widget.uniqueKey_consultant, widget.count_client);
                   },
                   child: Text(
                     'Approve',
@@ -123,12 +127,14 @@ class _ScheduleFixedState extends State<ScheduleFixed> {
                     ),
                   ),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.resolveWith((states) {
-                      if (states.contains(MaterialState.pressed)) {
-                        return Colors.black;
-                      }
-                      return Colors.black54;
-                    }),
+                    backgroundColor: MaterialStateProperty.resolveWith(
+                          (states) {
+                        if (states.contains(MaterialState.pressed)) {
+                          return Colors.black;
+                        }
+                        return Colors.black54;
+                      },
+                    ),
                     shape: MaterialStateProperty.all(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -143,15 +149,20 @@ class _ScheduleFixedState extends State<ScheduleFixed> {
       ),
     );
   }
-
-  Future<void> updateGuser_to_current(String uniqueKey_user, String timeValue, String dateValue) async {
-    print('Updating consultant status with name: $uniqueKey_user');
+  Future<void> updateConsultant(String uniqueKey_consultant, String count_client) async {
+    print('Updating consultant status with name: $uniqueKey_consultant');
 
     try {
-      await FirebaseDatabase.instance.reference().child('guser').child(uniqueKey_user).update({
-        'check': 'current',
-        'stime': timeValue, // Update 'stime' field
-        'sdate': dateValue, // Update 'sdate' field
+
+      int incrementedCount = int.parse(count_client) + 1;
+      String newCountClient = incrementedCount.toString();
+
+      await FirebaseDatabase.instance
+          .reference()
+          .child('consultant')
+          .child(uniqueKey_consultant)
+          .update({
+        'count_client': newCountClient,
       });
 
       print('Consultant status updated successfully');
@@ -161,13 +172,35 @@ class _ScheduleFixedState extends State<ScheduleFixed> {
     }
   }
 
+  Future<void> updateGuserToCurrent(
+      String uniqueKey_user, String timeValue, String dateValue) async {
+    print('Updating guser status with name: $uniqueKey_user');
 
-  void navigateToDetailPage(String uniqueKey) {
+    try {
+      await FirebaseDatabase.instance
+          .reference()
+          .child('guser')
+          .child(uniqueKey_user)
+          .update({
+        'check': 'current',
+        'stime': timeValue, // Update 'stime' field
+        'sdate': dateValue, // Update 'sdate' field
+      });
+
+      print('Guser status updated successfully');
+    } catch (error, stackTrace) {
+      print('Failed to update guser status: $error');
+      print('Stack trace: $stackTrace');
+    }
+  }
+
+  void navigateToDetailPage(String uniqueKey, String count_client) {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => ConfirmClient(
           uniqueKey: uniqueKey,
+          count_client: count_client,
         ),
       ),
     );

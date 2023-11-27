@@ -7,7 +7,9 @@ import 'schedule_appoint.dart';
 
 class ConfirmClient extends StatefulWidget {
   final String uniqueKey;
-  ConfirmClient({required this.uniqueKey});
+  final String count_client;
+
+  ConfirmClient({required this.uniqueKey , required this.count_client});
 
   @override
   State<ConfirmClient> createState() => _ConfirmClientState();
@@ -34,6 +36,7 @@ class _ConfirmClientState extends State<ConfirmClient> {
           guser['uniqueKey_user'],
           guser['stime'],
           guser['sdate'],
+          widget.count_client,
         );
       },
       child: Container(
@@ -128,10 +131,7 @@ class _ConfirmClientState extends State<ConfirmClient> {
                 },
               ),
             ),
-            if (count == 0)
-              Container(
-                child: Text("Nothing"),
-              ),
+
           ],
         ),
 
@@ -142,7 +142,7 @@ class _ConfirmClientState extends State<ConfirmClient> {
 
   void navigateToDetailPage(String name, String email, String address,
       String date_of_birth, String check, String occupation, String phone,
-      String uniqueKey_consultant, String uniqueKey_user,String stime, String sdate) {
+      String uniqueKey_consultant, String uniqueKey_user,String stime, String sdate, String count_client) {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -158,6 +158,7 @@ class _ConfirmClientState extends State<ConfirmClient> {
           uniqueKey_user: uniqueKey_user,
           stime: stime,
           sdate: sdate,
+            count_client: count_client,
         ),
       ),
     );

@@ -4,6 +4,7 @@ import 'package:tax_consultant/utils/color_utils.dart';
 import 'fetch_data.dart';
 import 'update_tax_rules.dart';
 import 'consultant_list_admin.dart';
+import 'admin_user_list.dart';
 
 class AdminGrid extends StatelessWidget {
   AdminGrid({super.key});
@@ -78,6 +79,12 @@ class AdminGrid extends StatelessWidget {
                   ));
                 }
 
+                if(data == item3)
+                {
+                  Navigator.push(context, MaterialPageRoute(builder:
+                      (context)=>UserListAdmin()
+                  ));
+                }
                 if(data == item4)
                 {
                   Navigator.push(context, MaterialPageRoute(builder:

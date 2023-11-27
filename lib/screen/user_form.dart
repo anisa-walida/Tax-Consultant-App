@@ -26,12 +26,6 @@ class UserForm extends StatefulWidget {
 
 class _UserFormState extends State<UserForm> {
 
-
-
-
-
-
-
   String check="pending";
   String stime = "none";
   String sdate = "none";
@@ -181,12 +175,7 @@ class _UserFormState extends State<UserForm> {
                     ),
                   ],
                 ),
-
                 Divider(height: 60.0, color: Colors.black,),
-
-
-
-
                 Text(
                   "Client Information",
                   style: TextStyle(

@@ -25,7 +25,7 @@ class _ConsultantListState extends State<ConsultantList> {
           consultant['address'],consultant['degree'],
           consultant['fees'],consultant['password'],
           consultant['phone'],consultant['url'],consultant['uniqueKey'],consultant['check'],
-          consultant['schedule'],
+          consultant['schedule'],consultant['count_client'],
 
         );
         // Pass the user's key when the card is clicked
@@ -149,11 +149,11 @@ class _ConsultantListState extends State<ConsultantList> {
       ),
     );
   }
-  void navigateToDetailPage(String name, String email ,String address, String degree,String fees, String password, String phone,String url,String uniqueKey,String check,String schedule) {
+  void navigateToDetailPage(String name, String email ,String address, String degree,String fees, String password, String phone,String url,String uniqueKey,String check,String schedule , String count_client) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => Appointment(name: name , email: email , address: address, degree: degree, fees: fees, password: password,phone: phone,url: url, uniqueKey:uniqueKey ,check:check, schedule: schedule,),
+        builder: (context) => Appointment(name: name , email: email , address: address, degree: degree, fees: fees, password: password,phone: phone,url: url, uniqueKey:uniqueKey ,check:check, schedule: schedule,count_client: count_client),
       ),
     );
   }

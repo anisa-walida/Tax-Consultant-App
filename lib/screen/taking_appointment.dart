@@ -18,13 +18,16 @@ class Appointment extends StatelessWidget {
   final String url;
   final String uniqueKey;
   final String schedule;
+  final String count_client;
   String? check;
+
 
 
   Appointment({required this.name, required this.email,
     required this.address,required this.degree,required this.fees,
     required this.password,required this.phone,required this.url,
     required this.uniqueKey, required  this.check, required this.schedule,
+    required this.count_client,
   });
 
   @override
@@ -127,6 +130,14 @@ class Appointment extends StatelessWidget {
                         ),
                         Text(
                           ' Email:$email',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                          ' Experience: Till now $count_client client ',
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.normal,

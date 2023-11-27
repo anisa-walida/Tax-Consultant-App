@@ -33,6 +33,7 @@ class _consultant_regState extends State<consultant_reg> {
   String check="pending";
   bool match=true;
   String? uniqueKey;
+  int count_client = 0 ;
   String consultant_userUid="consultant_userUid";
   TextEditingController _passwordTextController=TextEditingController();
   TextEditingController _emailTextController=TextEditingController();
@@ -427,6 +428,7 @@ class _consultant_regState extends State<consultant_reg> {
                       'check': check,
                       'schedule' : _scheduleTextController.text,
                       'consultant_userUid': consultant_userUid,
+                      'count_client': count_client.toString(),
                     };
 
                     await newConsultantRef.set(consultant);

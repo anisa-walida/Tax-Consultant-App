@@ -16,6 +16,7 @@ class Schedule_Appoint extends StatefulWidget {
   final String uniqueKey_user;
   final String stime;
   final String sdate;
+  final String  count_client;
 
 
   Schedule_Appoint({
@@ -30,6 +31,7 @@ class Schedule_Appoint extends StatefulWidget {
     required this.uniqueKey_user,
     required this.stime,
     required this.sdate,
+    required this.count_client,
   });
 
   @override
@@ -157,6 +159,7 @@ class _Schedule_AppointState extends State<Schedule_Appoint> {
                       widget.uniqueKey_user,
                       widget.stime,
                       widget.sdate,
+                      widget.count_client,
                     );
                     //updateGuser_to_current(uniqueKey_user);
                   },
@@ -258,7 +261,7 @@ class _Schedule_AppointState extends State<Schedule_Appoint> {
 
   void navigateToDetailPage(String name, String email, String address,
       String date_of_birth, String check, String occupation, String phone,
-      String uniqueKey_consultant, String uniqueKey_user,String stime, String sdate) {
+      String uniqueKey_consultant, String uniqueKey_user,String stime, String sdate, String  count_client,) {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -274,6 +277,7 @@ class _Schedule_AppointState extends State<Schedule_Appoint> {
           uniqueKey_user: uniqueKey_user,
           stime: stime,
           sdate: sdate,
+            count_client: count_client,
         ),
       ),
     );
